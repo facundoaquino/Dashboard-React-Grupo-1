@@ -1,4 +1,6 @@
-import React from 'react';
+import React, {Component} from 'react';
+import axios from 'axios';
+
 import Card from './Card';
 import Category from './Category';
 import Footer from './Footer';
@@ -10,7 +12,29 @@ import Metrics from './Metrics';
 import dummy from './assets/images/product_dummy.svg';
 
 
-const Main = () => {
+class Main extends Component {
+	constructor(){
+        super();
+        this.state={
+            categories:[]
+        };
+	}
+
+	async componentDidMount() {
+		try{
+			const res=await axios.get(`http://localhost:3050/api/category`)	
+			{ console.log(res.data) }
+			this.setState({ 
+				categories:res.data
+			})
+		}		
+		catch(e){
+			console.log(e)
+		}
+	  }
+
+
+	render(){
     return (
         <div id="content-wrapper" className="d-flex flex-column">
 
@@ -40,15 +64,10 @@ const Main = () => {
 							title="Categories in Data Base"
 						>
 							<div className="row">
-                        		<Category />
-                        		<Category />
-                        		<Category />
-                        		<Category />
-                        		<Category />
-                        		<Category />
-							</div>
+								{ this.state.categories.map((category) => <Category title={category.name}/>) }
+							</div>	
 						</Card>
-						
+
 					</div>
 					<Table />
 				</div>
@@ -58,6 +77,7 @@ const Main = () => {
 
 		</div>
     );
+}
 }
 
 export default Main;
