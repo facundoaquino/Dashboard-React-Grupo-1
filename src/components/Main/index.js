@@ -22,7 +22,7 @@ class Main extends Component {
 
 	async componentDidMount() {
 		try{
-			const res=await axios.get(`http://localhost:3050/api/category`)	
+			const res=await axios.get(`http://localhost:3050/api/categories`)	
 			{ console.log(res.data) }
 			this.setState({ 
 				categories:res.data
@@ -61,7 +61,7 @@ class Main extends Component {
 						</Card>
 
 						<Card 
-							title="Categories in Data Base"
+							title="Categorias"
 						>
 							<div className="row">
 								{ this.state.categories.map((category) => <Category title={category.name}/>) }

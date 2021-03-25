@@ -5,9 +5,9 @@ import Main from './Main';
 function App () {
     return (
         <>
-		<SideBar />
-        <Main />
-    </>
+            <SideBar />
+            <Main />
+        </>
     )
 }
 

@@ -19,6 +19,7 @@ const SideBar = () => {
 				classIcon="fas fa-fw fa-tachometer-alt"
 				title="Dashboard"
 				active="active"
+				route="http://localhost:3000/"
 			/>
 
 			<hr className="sidebar-divider" />
@@ -33,6 +34,7 @@ const SideBar = () => {
 						classIcon={link.classIcon} 
 						title={link.title}
 						active={link.active}
+						route={link.route}
 					/>
 				))
 			}

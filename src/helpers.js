@@ -1,15 +1,18 @@
 export const datos = [
     {
         classIcon: "fas fa-fw fa-folder",
-        title: "Pages"
+        title: "Users",
+        route:'http://localhost:3000/users'
     },
     {
         classIcon: "fas fa-fw fa-chart-area",
-        title: "Charts",
+        title: "Products",
+        route:'http://localhost:3000/products'
     },
     {
         classIcon: "fas fa-fw fa-table",
-        title: "Tables"
+        title: "Categories",
+        route: 'http://localhost:3000/categories'
     },
 ]
 
