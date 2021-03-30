@@ -1,10 +1,12 @@
 import React from 'react';
 import Link from './Link';
 import {datos} from '../../helpers';
+import './sidebar.css'
+
 
 const SideBar = () => {
     return (
-        <ul className="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+        <ul className="navbar-nav sidebar__background sidebar sidebar-dark accordion" id="accordionSidebar">
 
 			<a className="sidebar-brand d-flex align-items-center justify-content-center" href="/">
 				<div className="sidebar-brand-icon">
@@ -19,7 +21,7 @@ const SideBar = () => {
 				classIcon="fas fa-fw fa-tachometer-alt"
 				title="Dashboard"
 				active="active"
-				route="http://localhost:3000/"
+				route="/"
 			/>
 
 			<hr className="sidebar-divider" />

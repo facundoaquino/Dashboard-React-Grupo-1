@@ -2,17 +2,17 @@ export const datos = [
     {
         classIcon: "fas fa-fw fa-folder",
         title: "Users",
-        route:'http://localhost:3000/users'
+        route:'/users'
     },
     {
         classIcon: "fas fa-fw fa-chart-area",
         title: "Products",
-        route:'http://localhost:3000/products'
+        route:'/products'
     },
     {
         classIcon: "fas fa-fw fa-table",
         title: "Categories",
-        route: 'http://localhost:3000/categories'
+        route: '/categories'
     },
 ]
 
