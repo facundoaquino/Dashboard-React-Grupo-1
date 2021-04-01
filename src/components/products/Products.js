@@ -1,24 +1,40 @@
 import React, { useEffect, useState } from 'react'
 import ProductCard from './ProductCard'
+import './products.css'
 
 const Products = () => {
-	const [productGroup, setProducts] = useState([])
+	const [productGroup, setProducts] = useState({ products: [] })
+	const [page, setPage] = useState(0)
+	const { next, previous, products } = productGroup
 
 	useEffect(() => {
-		fetch('http://localhost:3050/api/products/all')
+		fetch(`http://localhost:3050/api/products/all?page=${page}`)
 			.then((res) => res.json())
-			.then(({ products }) => {
+			.then((products) => {
 				setProducts(products)
 			})
-	}, [])
+	}, [page])
 
-	// console.log(productGroup);
 	return (
 		<div>
 			<h3>Products</h3>
-			<div className='d-flex flex-wrap  justify-content-center'>
-				{productGroup.map(({ name, lastname, description }) => (
-					<ProductCard title={name} lastname={lastname} description={description} />
+			<div className='products__buttons'>
+				<button className='btn btn-success' disabled={!previous} onClick={() => setPage(page - 1)}>
+					anterior
+				</button>
+				<button className='btn btn-primary' disabled={!next} onClick={() => setPage(page + 1)}>
+					siguiente
+				</button>
+			</div>
+			<div className="d-flex flex-wrap  justify-content-center">
+				{products.map(({ name, lastname, description, image }, i) => (
+					<ProductCard
+						key={`${name}${i}`}
+						title={name}
+						lastname={lastname}
+						description={description}
+						image={image}
+					/>
 				))}
 			</div>
 		</div>
