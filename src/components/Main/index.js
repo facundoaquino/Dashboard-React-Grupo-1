@@ -4,27 +4,33 @@ import axios from 'axios';
 import Card from './Card';
 import Category from './Category';
 import Footer from './Footer';
-import Table from './Table';
+ 
 import Header from './Header';
 import Metrics from './Metrics';
 
 /* Assets */
 import dummy from './assets/images/product_dummy.svg';
 
+import  './assets/styles.css';
+
 
 class Main extends Component {
 	constructor(){
         super();
         this.state={
-            categories:[]
+            categories:[],
+			count:'',
         };
 	}
 
 	async componentDidMount() {
 		try{
 			const res=await axios.get(`http://localhost:3050/api/categories`)	
+			const {data}=await axios.get(`http://localhost:3050/api/products/all`)	
+			  
 			this.setState({ 
-				categories:res.data
+				categories:res.data,
+				count:data.count
 			})
 		}		
 		catch(e){
@@ -35,14 +41,15 @@ class Main extends Component {
 
 	render(){
     return (
-        <div id="content-wrapper" className="d-flex flex-column">
+        <div id="content-wrapper" className="d-flex flex-column main__container--bg">
 
-			<div id="content">
+			<div id="content " className='main__container--bg'>
 
 				<Header />
 
 				<div className="container-fluid">
 					<Metrics 
+						count={this.state.count}
 						title="App dashboard"
 					/>
 
@@ -68,7 +75,7 @@ class Main extends Component {
 						</Card>
 
 					</div>
-					<Table />
+					 
 				</div>
 			</div>
 

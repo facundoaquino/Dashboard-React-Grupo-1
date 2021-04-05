@@ -1,11 +1,11 @@
 import React from 'react';
 import Card from './Card';
 
-const Metrics = ({title}) => {
+const Metrics = ({title,count}) => {
     return (
         <>
             <div className="d-sm-flex align-items-center justify-content-between mb-4">
-				<h1 className="h3 mb-0 text-gray-800">{title}</h1>
+				<h1 className="h3 mb-0 main__title">{title}</h1>
 			</div>
 
 			<div className="row">
@@ -14,22 +14,22 @@ const Metrics = ({title}) => {
                     border="primary"
                     text="primary"
                     icon="fas fa-clipboard-list"
-                    title="Products in Data Base"
-                    value="135"
+                    title="Total de productos"
+                    value={count}
                 />
                 <Card 
                     border="success"
                     text="success"
                     icon="fas fa-dollar-sign"
-                    title="Amount in products"
-                    value="$546.456"
+                    title="Cantidad de usuarios"
+                    value=""
                 />
                 <Card 
                     border="warning"
                     text="warning"
                     icon="fas fa-user-check"
-                    title="Users quantity"
-                    value="38"
+                    title="Cantidad de categorias"
+                    value=""
                 />
 			</div>
         </>
