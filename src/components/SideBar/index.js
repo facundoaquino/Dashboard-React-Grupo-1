@@ -2,18 +2,20 @@ import React from 'react';
 import Link from './Link';
 import {datos} from '../../helpers';
 import './sidebar.css'
-
+import logoAzvi from './../Main/assets/images/logoAzvi.png'
 
 const SideBar = () => {
     return (
-        <ul className="navbar-nav sidebar__background sidebar sidebar-dark accordion" id="accordionSidebar">
+        <ul className="sidebar__container navbar-nav sidebar__background sidebar sidebar-dark accordion" id="accordionSidebar">
 
-			<a className="sidebar-brand d-flex align-items-center justify-content-center" href="/">
+			<div className="sidebar-brand d-flex align-items-center justify-content-center" href="/">
 				<div className="sidebar-brand-icon">
-					<i className="fas fa-chart-line"></i>
+					 
+
+				<img className='sidebar__logo' src={logoAzvi} alt=""/>
 				</div>
 				<div className="sidebar-brand-text mx-3">Admin</div>
-			</a>
+			</div>
 
 			<hr className="sidebar-divider my-0" />
 

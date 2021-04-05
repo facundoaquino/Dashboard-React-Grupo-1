@@ -16,8 +16,8 @@ const Products = () => {
 	}, [page])
 
 	return (
-		<div>
-			<h3>Products</h3>
+		<div id="content-wrapper" className='products__container'>
+			<h3 className='products__title'>PRODUCTS</h3>
 			<div className='products__buttons'>
 				<button className='btn btn-success' disabled={!previous} onClick={() => setPage(page - 1)}>
 					anterior
@@ -26,7 +26,7 @@ const Products = () => {
 					siguiente
 				</button>
 			</div>
-			<div className="d-flex flex-wrap  justify-content-center">
+			<div className="d-flex flex-wrap  ">
 				{products.map(({ name, lastname, description, image }, i) => (
 					<ProductCard
 						key={`${name}${i}`}
