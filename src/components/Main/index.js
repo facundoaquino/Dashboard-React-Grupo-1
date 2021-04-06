@@ -19,18 +19,21 @@ class Main extends Component {
         super();
         this.state={
             categories:[],
-			count:'',
+			countProducts:'',
+			countCategories:'',
         };
 	}
 
 	async componentDidMount() {
 		try{
-			const res=await axios.get(`http://localhost:3050/api/categories`)	
-			const {data}=await axios.get(`http://localhost:3050/api/products/all`)	
+			const dataCategories=await axios.get(`http://localhost:3050/api/categories`)	
+			//const {dataProducts}=await axios.get(`http://localhost:3050/api/products/all`)
 			  
 			this.setState({ 
-				categories:res.data,
-				count:data.count
+				categories:dataCategories.data,
+				//countProducts:dataProducts.count,
+				countCategories:dataCategories.data.length
+				
 			})
 		}		
 		catch(e){
@@ -49,7 +52,8 @@ class Main extends Component {
 
 				<div className="container-fluid">
 					<Metrics 
-						count={this.state.count}
+						countProducts={this.state.countProducts}
+						countCategories={this.state.countCategories}
 						title="App dashboard"
 					/>
 
@@ -70,7 +74,7 @@ class Main extends Component {
 							title="Categorias"
 						>
 							<div className="row">
-								{ this.state.categories.map((category, i) => <Category key={category.name} title={category.name}/>) }
+								{ this.state.categories.map((category, i) => <Category key={category.name} title={category.name} count={category.providers.length}/>) }
 							</div>	
 						</Card>
 
