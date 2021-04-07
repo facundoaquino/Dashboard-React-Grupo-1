@@ -21,6 +21,7 @@ class Main extends Component {
             categories:[],
 			countProducts:'',
 			countCategories:'',
+			countUsers:''
         };
 	}
 
@@ -28,12 +29,13 @@ class Main extends Component {
 		try{
 			const dataCategories=await axios.get(`http://localhost:3050/api/categories`)	
 			const {data:{count}}=await axios.get(`http://localhost:3050/api/products/all`)
-			 
+			const {count: countUsers}=await axios.get(`http://localhost:3050/api/users`)
+		
 			this.setState({ 
 				categories:dataCategories.data,
 				countProducts:count,
-				countCategories:dataCategories.data.length
-				
+				countCategories:dataCategories.data.length,
+				countUsers
 			})
 		}		
 		catch(e){
@@ -51,10 +53,11 @@ class Main extends Component {
 				<Header />
 
 				<div className="container-fluid">
-					<Metrics 
+					<Metrics
 						countProducts={this.state.countProducts}
 						countCategories={this.state.countCategories}
 						title="App dashboard"
+						countUsers={this.state.countUsers}
 					/>
 
 					<div className="row">
