@@ -27,11 +27,11 @@ class Main extends Component {
 	async componentDidMount() {
 		try{
 			const dataCategories=await axios.get(`http://localhost:3050/api/categories`)	
-			//const {dataProducts}=await axios.get(`http://localhost:3050/api/products/all`)
-			  
+			const {data:{count}}=await axios.get(`http://localhost:3050/api/products/all`)
+			 
 			this.setState({ 
 				categories:dataCategories.data,
-				//countProducts:dataProducts.count,
+				countProducts:count,
 				countCategories:dataCategories.data.length
 				
 			})
