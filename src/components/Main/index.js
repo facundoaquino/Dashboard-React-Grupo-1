@@ -32,6 +32,7 @@ class Main extends Component {
 			const dataCategories=await axios.get(`http://localhost:3050/api/categories`)	
 			const {data:{count}}=await axios.get(`http://localhost:3050/api/products/all`)
 			const dataUsers=await axios.get(`http://localhost:3050/api/users`)
+			//const dataProviders = await axios.get(`http://localhost:3050/apiproducts/latest`)
 		
 			this.setState({ 
 				categories:dataCategories.data,
@@ -64,7 +65,7 @@ class Main extends Component {
 
 					<div className="row">
 						{/* Cards - prueba de childrens */}
-						
+
 						<LastProduct/>
 						
 
