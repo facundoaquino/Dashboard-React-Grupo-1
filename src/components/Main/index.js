@@ -4,27 +4,38 @@ import axios from 'axios';
 import Card from './Card';
 import Category from './Category';
 import Footer from './Footer';
-import Table from './Table';
+ 
 import Header from './Header';
 import Metrics from './Metrics';
 
 /* Assets */
 import dummy from './assets/images/product_dummy.svg';
 
+import  './assets/styles.css';
+
 
 class Main extends Component {
 	constructor(){
         super();
         this.state={
-            categories:[]
+            categories:[],
+			countProducts:'',
+			countCategories:'',
+			countUsers:''
         };
 	}
 
 	async componentDidMount() {
 		try{
-			const res=await axios.get(`http://localhost:3050/api/categories`)	
+			const dataCategories=await axios.get(`http://localhost:3050/api/categories`)	
+			const {data:{count}}=await axios.get(`http://localhost:3050/api/products/all`)
+			const dataUsers=await axios.get(`http://localhost:3050/api/users`)
+		
 			this.setState({ 
-				categories:res.data
+				categories:dataCategories.data,
+				countProducts:count,
+				countCategories:dataCategories.data.length,
+				countUsers:dataUsers.data.count,
 			})
 		}		
 		catch(e){
@@ -35,15 +46,18 @@ class Main extends Component {
 
 	render(){
     return (
-        <div id="content-wrapper" className="d-flex flex-column">
+        <div id="content-wrapper" className="d-flex flex-column main__container--bg">
 
-			<div id="content">
+			<div id="content " className='main__container--bg'>
 
 				<Header />
 
 				<div className="container-fluid">
-					<Metrics 
+					<Metrics
+						countProducts={this.state.countProducts}
+						countCategories={this.state.countCategories}
 						title="App dashboard"
+						countUsers={this.state.countUsers}
 					/>
 
 					<div className="row">
@@ -63,12 +77,12 @@ class Main extends Component {
 							title="Categorias"
 						>
 							<div className="row">
-								{ this.state.categories.map((category, i) => <Category key={category.name} title={category.name}/>) }
+								{ this.state.categories.map((category, i) => <Category key={category.name} title={category.name} count={category.providers.length}/>) }
 							</div>	
 						</Card>
 
 					</div>
-					<Table />
+					 
 				</div>
 			</div>
 
