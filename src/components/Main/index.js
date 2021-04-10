@@ -71,12 +71,12 @@ class Main extends Component {
 					<div className="row">
 						{/* Cards - prueba de childrens */}
 
-						<LastProduct
+						
 							
-							//{...this.state.countProvider.map((provider, i)=> <LastProduct key={provider.id} name={provider[0].name} lastname={provider[0].lastname} /> )}
-							//name={this.state.countProvider.data[0].name} 
-							// lastname={this.state.countProvider[0].lastname}
-						/>
+							{this.state.countProvider.map((provider, i)=> <LastProduct key={provider.id} name={provider.name} lastname={provider.lastname} image={provider.image} /> )}
+							{/* name={this.state.countProvider.data[0].name} 
+							lastname={this.state.countProvider[0].lastname}  */}
+						
 						
 
 						<Card 
