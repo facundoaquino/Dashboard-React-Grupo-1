@@ -23,7 +23,8 @@ class Main extends Component {
             categories:[],
 			countProducts:'',
 			countCategories:'',
-			countUsers:''
+			countUsers:'',
+			countProvider: []
         };
 	}
 
@@ -32,14 +33,18 @@ class Main extends Component {
 			const dataCategories=await axios.get(`http://localhost:3050/api/categories`)	
 			const {data:{count}}=await axios.get(`http://localhost:3050/api/products/all`)
 			const dataUsers=await axios.get(`http://localhost:3050/api/users`)
-			//const dataProviders = await axios.get(`http://localhost:3050/apiproducts/latest`)
+			const dataProviders = await axios.get(`http://localhost:3050/api/products/latest`)
+			console.log(dataProviders.data)
 		
 			this.setState({ 
 				categories:dataCategories.data,
 				countProducts:count,
 				countCategories:dataCategories.data.length,
 				countUsers:dataUsers.data.count,
+				countProvider: dataProviders.data
+				
 			})
+			console.log(dataCategories.data)
 		}		
 		catch(e){
 			console.log(e)
@@ -66,7 +71,12 @@ class Main extends Component {
 					<div className="row">
 						{/* Cards - prueba de childrens */}
 
-						<LastProduct/>
+						<LastProduct
+							
+							//{...this.state.countProvider.map((provider, i)=> <LastProduct key={provider.id} name={provider[0].name} lastname={provider[0].lastname} /> )}
+							//name={this.state.countProvider.data[0].name} 
+							// lastname={this.state.countProvider[0].lastname}
+						/>
 						
 
 						<Card 
