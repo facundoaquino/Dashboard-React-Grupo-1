@@ -1,0 +1,12 @@
+.providerDetail{
+    color: rgb(70, 70, 199);
+}
+
+
+.unShowDetails{
+    display: none;
+}
+
+.showDetails{
+    display: inline-block;
+}

@@ -73,7 +73,7 @@ class Main extends Component {
 
 						
 							
-							{this.state.countProvider.map((provider, i)=> <LastProduct key={provider.id} name={provider.name} lastname={provider.lastname} image={provider.image} /> )}
+							{this.state.countProvider.map((provider, i)=> <LastProduct key={provider.id} name={provider.name} lastname={provider.lastname} image={provider.image} location={provider.location } cellphone={provider.cellphone} email={provider.email} /> )}
 							{/* name={this.state.countProvider.data[0].name} 
 							lastname={this.state.countProvider[0].lastname}  */}
 						
