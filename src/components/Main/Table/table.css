@@ -1,0 +1,18 @@
+
+
+.table__avatar{
+    width: 40px;
+    border-radius: 50%;
+}
+
+td,th,tr{
+    text-align: center;
+}
+td{
+    color: #f73737;
+     font-size: 18px !important;
+}
+
+th{
+    color: white;
+}

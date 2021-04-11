@@ -1,81 +1,47 @@
-import React from 'react';
-
-const Table = () => {
-    return (
-        <>
-            <h1 className="h3 mb-2 text-gray-800">All the products in the Database</h1>
-			<div className="card shadow mb-4">
-				<div className="card-body">
-					<div className="table-responsive">
-						<table className="table table-bordered" id="dataTable" width="100%" cellSpacing="0">
+import React from 'react'
+import LoadingTable from './LoadingTable'
+import './table.css'
+const Table = ({ users }) => {
+	return (
+		<>
+			 
+						<table className="table   table-striped  table-bordered table-hover"  width="100%" cellSpacing="0">
 							<thead>
 								<tr>
-									<th>Name</th>
-									<th>Description</th>
-									<th>Price</th>
-									<th>Categories</th>
-									<th>Colors</th>
-									<th>Stock</th>
+									<th>Nombre</th>
+									<th>Apellido</th>
+									<th>Email</th>
+
+									<th>Avatar</th>
 								</tr>
 							</thead>
-							<tfoot>
-								<tr>
-									<th>Name</th>
-									<th>Description</th>
-									<th>Price</th>
-									<th>Categories</th>
-									<th>Colors</th>
-									<th>Stock</th>
-								</tr>
-							</tfoot>
+
 							<tbody>
-								<tr>
-									<td>Tiger Nixon</td>
-									<td>System Architect</td>
-									<td>$320,800</td>
-									<td>
-										<ul>
-											<li>Category 01</li>
-											<li>Category 02</li>
-											<li>Category 03</li>
-										</ul>
-									</td>
-									<td>
-										<ul>
-											<li><span className="text-danger">Red</span></li>
-											<li><span className="text-primary">Blue</span></li>
-											<li><span className="text-success">Green</span></li>
-										</ul>
-									</td>
-									<td>245</td>
-								</tr>
-								<tr>
-									<td>Jane Doe</td>
-									<td>Fullstack developer</td>
-									<td>$320,800</td>
-									<td>
-										<ul>
-											<li>Category 01</li>
-											<li>Category 02</li>
-											<li>Category 03</li>
-										</ul>
-									</td>
-									<td>
-										<ul>
-											<li><span className="text-danger">Red</span></li>
-											<li><span className="text-primary">Blue</span></li>
-											<li><span className="text-success">Green</span></li>
-										</ul>
-									</td>
-									<td>245</td>
-								</tr>
+								{!users.length ? (
+									 
+										<LoadingTable /> 
+									 
+								) : (
+									users.map((user) => (
+										<tr>
+											<td>{user.name}</td>
+											<td>{user.lastname}</td>
+											<td>{user.email}</td>
+											<td>
+												<img
+													className="table__avatar"
+													src={`http://localhost:3050/images/users/${user.image}`}
+													alt=""
+												/>
+											</td>
+										</tr>
+									))
+								)}
 							</tbody>
 						</table>
-					</div>
-				</div>
-			</div>
-        </>
-    );
+				 
+		</>
+	)
 }
 
-export default Table;
+export default Table

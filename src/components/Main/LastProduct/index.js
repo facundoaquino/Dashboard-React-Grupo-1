@@ -1,11 +1,11 @@
-import React, {useState, Fragment} from 'react'
+import React  from 'react'
 
-import dummy from '../assets/images/product_dummy.svg';
+ 
 import Card from '../Card';
 import "./Lastproduct.css"
 
 
-const details = document.querySelector("#Details")
+ 
 
 const LastProduct = (props)=>{
 

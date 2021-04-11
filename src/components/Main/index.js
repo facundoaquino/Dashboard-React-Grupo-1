@@ -10,9 +10,7 @@ import Metrics from './Metrics';
 
 import LastProduct from'./LastProduct'
 
-/* Assets */
-import dummy from './assets/images/product_dummy.svg';
-
+ 
 import  './assets/styles.css';
 
 
