@@ -8,7 +8,7 @@ const Products = () => {
 	const { next, previous, products } = productGroup
 
 	useEffect(() => {
-		fetch(`http://localhost:3050/api/products?page=${page}`)
+		fetch(`https://azvi.herokuapp.com/api/products?page=${page}`)
 			.then((res) => res.json())
 			.then((products) => {
 				setProducts(products)

@@ -30,7 +30,7 @@ const Table = ({ users }) => {
 											<td>
 												<img
 													className="table__avatar"
-													src={`http://localhost:3050/images/users/${user.image}`}
+													src={`https://azvi.herokuapp.com/images/users/${user.image}`}
 													alt=""
 												/>
 											</td>

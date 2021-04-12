@@ -14,7 +14,7 @@ const LastProduct = (props)=>{
             <>
                 <Card title="Ultimo provedor en la base de datos">
 						<div className="text-center">
-							<img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{width: "25rem"}}  src={`http://localhost:3050/${props.image}`}  alt="El usuario no posee foto" />
+							<img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{width: "25rem"}}  src={`https://azvi.herokuapp.com/${props.image}`}  alt="El usuario no posee foto" />
 						</div>
 						<p>El ultimo es {props.name} {props.lastname}</p>
 						<p className="providerDetail " > <u>Detalles del Ultimo proveedor</u> </p>

@@ -6,7 +6,7 @@ const Users = () => {
 
 	useEffect(() => {
 		setTimeout(() => {
-			fetch('http://localhost:3050/api/users')
+			fetch('https://azvi.herokuapp.com//api/users')
 				.then((res) => res.json())
 				.then(({ users: usersData }) => {
 					setUsers(usersData)
