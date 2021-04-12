@@ -23,7 +23,7 @@ const Table = ({ users }) => {
 									 
 								) : (
 									users.map((user) => (
-										<tr>
+										<tr key={`${user.name}${user.lastname}`}>
 											<td>{user.name}</td>
 											<td>{user.lastname}</td>
 											<td>{user.email}</td>

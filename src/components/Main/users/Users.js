@@ -13,7 +13,7 @@ const Users = () => {
 				})
 		}, 1000)
 	}, [])
-	console.log(users)
+	 
 	return (
 		<div className="users__container">
 			<h1 className="users__title">Usuarios</h1>

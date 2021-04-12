@@ -8,7 +8,7 @@ const Products = () => {
 	const { next, previous, products } = productGroup
 
 	useEffect(() => {
-		fetch(`http://localhost:3050/api/products/all?page=${page}`)
+		fetch(`http://localhost:3050/api/products?page=${page}`)
 			.then((res) => res.json())
 			.then((products) => {
 				setProducts(products)
@@ -16,25 +16,19 @@ const Products = () => {
 	}, [page])
 
 	return (
-		<div id="content-wrapper" className='products__container'>
-			<h3 className='products__title'>PRODUCTS</h3>
-			<div className='products__buttons'>
-				<button className='btn btn-success' disabled={!previous} onClick={() => setPage(page - 1)}>
-					anterior
+		<div id="content-wrapper" className="products__container">
+			<h3 className="products__title">Proveedores</h3>
+			<div className="products__buttons">
+				<button className="btn btn-success" disabled={!previous} onClick={() => setPage(page - 1)}>
+					Anterior
 				</button>
-				<button className='btn btn-primary' disabled={!next} onClick={() => setPage(page + 1)}>
-					siguiente
+				<button className="btn btn-primary" disabled={!next} onClick={() => setPage(page + 1)}>
+					Siguiente
 				</button>
 			</div>
 			<div className="d-flex flex-wrap  ">
-				{products.map(({ name, lastname, description, image }, i) => (
-					<ProductCard
-						key={`${name}${i}`}
-						title={name}
-						lastname={lastname}
-						description={description}
-						image={image}
-					/>
+				{products.map((product, i) => (
+					<ProductCard key={`${i}${product.lastname}`} {...product} />
 				))}
 			</div>
 		</div>

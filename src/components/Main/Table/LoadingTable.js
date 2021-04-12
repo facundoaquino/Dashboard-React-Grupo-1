@@ -1,12 +1,12 @@
 import React from 'react'
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
 const LoadingTable = () => {
-	const rounds = ['', '', '', '', '', '', '', '', '', '', '', '', '', '']
-	console.log(rounds.length)
+	const rounds = Array(15).fill('')
+	 
 	return (
 		<>
-			{rounds.map((r) => (
-				<tr>
+			{rounds.map((r,i) => (
+				<tr key={i}>
 					<td>
 						<SkeletonTheme color="#ff52529f" highlightColor="#ff5252">
 							<Skeleton height={16} count={1} width={100} />
