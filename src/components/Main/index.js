@@ -29,7 +29,7 @@ class Main extends Component {
 			const dataCategories = await axios.get(`https://azvi.herokuapp.com/api/categories`)
 			const {
 				data: { count },
-			} = await axios.get(`https://azvi.herokuapp.com/api/products/all`)
+			} = await axios.get(`https://azvi.herokuapp.com/api/products`)
 			const dataUsers = await axios.get(`https://azvi.herokuapp.com/api/users`)
 			const dataProviders = await axios.get(`https://azvi.herokuapp.com/api/products/latest`)
 			console.log(dataProviders.data)

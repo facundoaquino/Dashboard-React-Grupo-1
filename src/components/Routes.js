@@ -14,7 +14,7 @@ const Router=()=>(
             <Route path='/' exact component={App}/>  
             <Route path='/products' exact component={Products}/>  
             <Route path='/users' exact component={Users}/>  
-            <Route component={NotFound}/> 
+            <Route path='/' component={App}/> 
         </Switch>
     </BrowserRouter>
 );
