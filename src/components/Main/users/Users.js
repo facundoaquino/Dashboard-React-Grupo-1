@@ -5,13 +5,13 @@ const Users = () => {
 	const [users, setUsers] = useState([])
 
 	useEffect(() => {
-		setTimeout(() => {
-			fetch('https://azvi.herokuapp.com//api/users')
+		 
+			fetch('https://azvi.herokuapp.com/api/users')
 				.then((res) => res.json())
 				.then(({ users: usersData }) => {
 					setUsers(usersData)
 				})
-		}, 1000)
+		 
 	}, [])
 	 
 	return (
