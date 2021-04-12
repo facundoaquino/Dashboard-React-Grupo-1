@@ -29,7 +29,7 @@ class Main extends Component {
 	async componentDidMount() {
 		try{
 			const dataCategories=await axios.get(`http://localhost:3050/api/categories`)	
-			const {data:{count}}=await axios.get(`http://localhost:3050/api/products/all`)
+			const {data:{count}}=await axios.get(`http://localhost:3050/api/products`)
 			const dataUsers=await axios.get(`http://localhost:3050/api/users`)
 			const dataProviders = await axios.get(`http://localhost:3050/api/products/latest`)
 			console.log(dataProviders.data)
