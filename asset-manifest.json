@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/Dashboard-React-Grupo-1/static/css/main.24d79c78.chunk.css",
+    "main.js": "/Dashboard-React-Grupo-1/static/js/main.594b2e50.chunk.js",
+    "main.js.map": "/Dashboard-React-Grupo-1/static/js/main.594b2e50.chunk.js.map",
+    "runtime-main.js": "/Dashboard-React-Grupo-1/static/js/runtime-main.54849d94.js",
+    "runtime-main.js.map": "/Dashboard-React-Grupo-1/static/js/runtime-main.54849d94.js.map",
+    "static/js/2.ef0450cf.chunk.js": "/Dashboard-React-Grupo-1/static/js/2.ef0450cf.chunk.js",
+    "static/js/2.ef0450cf.chunk.js.map": "/Dashboard-React-Grupo-1/static/js/2.ef0450cf.chunk.js.map",
+    "index.html": "/Dashboard-React-Grupo-1/index.html",
+    "static/css/main.24d79c78.chunk.css.map": "/Dashboard-React-Grupo-1/static/css/main.24d79c78.chunk.css.map",
+    "static/js/2.ef0450cf.chunk.js.LICENSE.txt": "/Dashboard-React-Grupo-1/static/js/2.ef0450cf.chunk.js.LICENSE.txt",
+    "static/media/dummy-avatar.538b0c2d.jpg": "/Dashboard-React-Grupo-1/static/media/dummy-avatar.538b0c2d.jpg",
+    "static/media/logoAzvi.83904e29.png": "/Dashboard-React-Grupo-1/static/media/logoAzvi.83904e29.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.54849d94.js",
+    "static/js/2.ef0450cf.chunk.js",
+    "static/css/main.24d79c78.chunk.css",
+    "static/js/main.594b2e50.chunk.js"
+  ]
+}
